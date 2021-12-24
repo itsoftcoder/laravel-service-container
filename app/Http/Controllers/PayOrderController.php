@@ -12,10 +12,9 @@ use App\Http\Controllers\Controller;
 class PayOrderController extends Controller
 {
     //
-    public function store()
+    public function store(PaymentGetway $payment)
     {
-        # code...
-        $payment =  new PaymentGetway();
+        
         dd($payment->charge(100));
 
         // $filter = new Filtering();
