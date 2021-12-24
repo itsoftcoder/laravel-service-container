@@ -17,7 +17,10 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        $this->app->bind(PaymentGetway::class,function($app){
+        // $this->app->bind(PaymentGetway::class,function($app){
+        //     return new PaymentGetway('usd');
+        // });
+        $this->app->singleton(PaymentGetway::class,function($app){
             return new PaymentGetway('usd');
         });
     }
